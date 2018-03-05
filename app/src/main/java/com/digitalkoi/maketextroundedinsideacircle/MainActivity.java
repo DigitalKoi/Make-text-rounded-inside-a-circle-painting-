@@ -76,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
             Bitmap bitmap = convertToMutable(BitmapFactory.decodeResource(getResources(), currentPic));
             Canvas canvas = new Canvas(bitmap);
             float height = bitmap.getHeight();
-            float radiusPic = height / 2 - radiusManual;
+            float radiusPic = height / 2;
+            float radiusCircle = radiusPic - radiusManual;
 
-            circle.addCircle(radiusPic, radiusPic, radiusPic, Path.Direction.CCW);
+            circle.addCircle(radiusPic, radiusPic, radiusCircle, Path.Direction.CCW);
 
             paint = new Paint(Paint.ANTI_ALIAS_FLAG);
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
