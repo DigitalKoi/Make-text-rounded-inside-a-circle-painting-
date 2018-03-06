@@ -20,7 +20,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.io.File;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.radiusEdTx)
     EditText radiusEdTx;
     @BindView(R.id.spasingEdTx)
-    EditText spasingEdTx;
+    EditText spacingEdTx;
 
     private int currentPic;
 
@@ -131,12 +130,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.applyBt)
     public void apply(View view) {
 
-        hideKeyboard();
-
         String name = String.valueOf(nameEditText.getText());
         int font = Integer.valueOf(fontSizeEditText.getText().toString());
         int radius = Integer.valueOf(radiusEdTx.getText().toString());
-        float spacing = Float.valueOf(spasingEdTx.getText().toString());
+        float spacing = Float.valueOf(spacingEdTx.getText().toString());
 
         makeText(name, font, radius, spacing);
     }
@@ -157,14 +154,6 @@ public class MainActivity extends AppCompatActivity {
     public void largePic(View view) {
         currentPic = R.drawable.large_jack_nicholson;
         imageView.setImageResource(currentPic);
-    }
-
-    private void hideKeyboard() {
-        View view = this.getCurrentFocus();
-        if (view != null) {
-            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
     }
 
     private boolean isStoragePermissionGranted() {

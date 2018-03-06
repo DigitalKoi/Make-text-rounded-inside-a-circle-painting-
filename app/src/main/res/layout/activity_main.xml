@@ -14,52 +14,52 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/applyBt" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nameExTx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
         android:text="Johnny"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fontSizeEdTx"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <EditText
         android:id="@+id/fontSizeEdTx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Font size"
         android:inputType="number"
         android:text="80"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/radiusEdTx"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/nameExTx" />
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <Button
         android:id="@+id/applyBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Apply"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spasingEdTx" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -104,16 +104,16 @@
         android:id="@+id/radiusEdTx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
         android:text="15"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/spasingEdTx"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-    app:layout_constraintTop_toBottomOf="@+id/fontSizeEdTx" />
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView4"
@@ -130,29 +130,30 @@
         android:id="@+id/spasingEdTx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:text="0.1"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/applyBt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/radiusEdTx" />
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/nameExTx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-            <RadioButton
+        <RadioButton
             android:id="@+id/smallRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -160,14 +161,14 @@
             android:checked="true"
             android:text="small" />
 
-            <RadioButton
+        <RadioButton
             android:id="@+id/mediumRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="medium" />
 
-            <RadioButton
+        <RadioButton
             android:id="@+id/largeRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
